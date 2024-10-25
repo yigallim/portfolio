@@ -1,0 +1,101 @@
+/* Letters problems:
+TaVaWaXaYa
+FeKeTeVeWeXeYe
+vewexeye
+FoKoToVoWoXoYo
+vowoxoyo
+TuYu */
+
+.T + .a {
+  margin-left: -0.06em;
+}
+.V + .a {
+  margin-left: -0.05em;
+}
+.W + .a {
+  margin-left: -0.05em;
+}
+.X + .a {
+  margin-left: -0.02em;
+}
+.Y + .a {
+  margin-left: -0.08em;
+}
+
+.F + .e {
+  margin-left: -0.04em;
+}
+.K + .e {
+  margin-left: -0.04em;
+}
+.T + .e {
+  margin-left: -0.08em;
+}
+.V + .e {
+  margin-left: -0.06em;
+}
+.W + .e {
+  margin-left: -0.04em;
+}
+.X + .e {
+  margin-left: -0.04em;
+}
+.Y + .e {
+  margin-left: -0.08em;
+}
+
+.v + .e {
+  margin-left: -0.02em;
+}
+.w + .e {
+  margin-left: -0.02em;
+}
+.x + .e {
+  margin-left: -0.02em;
+}
+.y + .e {
+  margin-left: -0.02em;
+}
+
+.F + .o {
+  margin-left: -0.04em;
+}
+.K + .o {
+  margin-left: -0.04em;
+}
+.T + .o {
+  margin-left: -0.08em;
+}
+.V + .o {
+  margin-left: -0.05em;
+}
+.W + .o {
+  margin-left: -0.05em;
+}
+.X + .o {
+  margin-left: -0.02em;
+}
+.Y + .o {
+  margin-left: -0.08em;
+}
+
+.v + .o {
+  margin-left: -0.02em;
+}
+.w + .o {
+  margin-left: -0.02em;
+}
+.x + .o {
+  margin-left: -0.02em;
+}
+.y + .o {
+  margin-left: -0.02em;
+}
+
+.T + .u {
+  margin-left: -0.06em;
+}
+
+.Y + .u {
+  margin-left: -0.04em;
+}

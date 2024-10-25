@@ -2,32 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply h-full bg-black leading-tight tracking-tight [word-spacing:-0.025em];
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer components {
+  .text-gradient {
+    @apply bg-gradient-to-r text-transparent bg-clip-text;
   }
+
+  .absolute-center {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .rounded-bento {
+    @apply rounded-[clamp(1rem,1.25vi+0.5rem,1.5rem)];
+  }
+}
+
+@layer base {
+  .heading-1 {
+    @apply text-[clamp(3.75rem,5.625vi+1.5rem,6rem)];
+  }
+  .heading-2 {
+    @apply text-[clamp(2.58rem,3.55vi+1.16rem,4rem)];
+  }
+  .heading-3 {
+    @apply text-[clamp(2.18rem,2.05vi+1.36rem,3rem)];
+  }
+  .heading-4 {
+    @apply text-[clamp(1.85rem,2.05vi+1.03rem,2.67rem)];
+  }
+  .heading-5 {
+    @apply text-[clamp(1.67rem,1.825vi+0.94rem,2.4rem)];
+  }
+  .heading-6 {
+    @apply text-[clamp(1.5rem,1.25vi+1rem,2rem)];
+  }
+  .sub-heading {
+    @apply text-[clamp(1.375rem,0.937vi+1rem,1.75rem)];
+  }
+
+  .base-tiny {
+    @apply text-[clamp(0.75rem,0.625rem+0.313vi,0.875rem)];
+  }
+  .base-small {
+    @apply text-[clamp(0.875rem,0.75rem+0.313vi,1rem)];
+  }
+  .base-normal {
+    @apply text-[clamp(1rem,0.75rem+0.625vi,1.25rem)];
+  }
+  .base-large {
+    @apply text-[clamp(1.25rem,1rem+0.625vi,1.5rem)];
+  }
+
+  .section-inner {
+    @apply mx-[clamp(1.5rem,6vi,6vi)] 3xl:mx-auto 3xl:max-w-[1500px] 3xl:w-[1500px];
+  }
+  .section-spacing {
+    @apply section-inner py-[clamp(4rem,2.5rem+4vi,6rem)];
+  }
+  .section-desc {
+    @apply text-neutral-400 font-semibold base-large;
+  }
+  .section-heading {
+    @apply text-neutral-100 text-gradient font-bold leading-[1.15]
+    [word-spacing:-0.05em] heading-1;
+  }
+}
+
+.gradient-test {
+  background-image: linear-gradient(to right, #e34534, #cd18c2, #25a5e6, #252fff);
+  color: transparent;
+  background-clip: text;
 }

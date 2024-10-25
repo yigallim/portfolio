@@ -1,0 +1,87 @@
+/* Define the CSS variables for margin adjustments */
+:root {
+  --margin-small: -0.02em;
+  --margin-medium: -0.04em;
+  --margin-large: -0.05em;
+  --margin-xlarge: -0.06em;
+  --margin-xxlarge: -0.08em;
+}
+
+/* Letters problems:
+     TaVaWaXaYa
+     FeKeTeVeWeXeYe
+     vewexeye
+     FoKoToVoWoXoYo
+     vowoxoyo
+     TuYu 
+  */
+
+/* Grouped selectors based on margin values */
+
+/* For "a" */
+.T + .a,
+.Y + .a {
+  margin-left: var(--margin-xxlarge);
+}
+.V + .a,
+.W + .a {
+  margin-left: var(--margin-large);
+}
+.X + .a {
+  margin-left: var(--margin-small);
+}
+
+/* For "e" */
+.F + .e,
+.K + .e,
+.W + .e,
+.X + .e {
+  margin-left: var(--margin-medium);
+}
+.V + .e {
+  margin-left: var(--margin-large);
+}
+.T + .e,
+.Y + .e {
+  margin-left: var(--margin-xxlarge);
+}
+
+/* For lowercase "e" */
+.v + .e,
+.w + .e,
+.x + .e,
+.y + .e {
+  margin-left: var(--margin-small);
+}
+
+/* For "o" */
+.F + .o,
+.K + .o,
+.W + .o,
+.X + .o {
+  margin-left: var(--margin-medium);
+}
+.V + .o,
+.W + .o {
+  margin-left: var(--margin-large);
+}
+.T + .o,
+.Y + .o {
+  margin-left: var(--margin-xxlarge);
+}
+
+/* For lowercase "o" */
+.v + .o,
+.w + .o,
+.x + .o,
+.y + .o {
+  margin-left: var(--margin-small);
+}
+
+/* For "u" */
+.T + .u {
+  margin-left: var(--margin-xlarge);
+}
+.Y + .u {
+  margin-left: var(--margin-medium);
+}
