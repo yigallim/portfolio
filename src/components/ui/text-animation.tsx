@@ -1,4 +1,4 @@
-import { easeExpo } from "@/lib/ease-expo";
+import { easeExpo } from "@/lib/global/ease-expo";
 import { motion } from "framer-motion";
 import { ComponentProps, ReactNode } from "react";
 import { AnimationProps } from "framer-motion";

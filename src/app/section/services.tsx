@@ -1,6 +1,11 @@
 import React from "react";
-import TextAnimation from "@/components/ui/text-animation";
+import Image from "next/image";
+import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { cn } from "@/lib/utils";
+import TextAnimation from "@/components/ui/text-animation";
+import svg32 from "@/app/assets/img/svg/32.svg";
+import svg217 from "@/app/assets/img/svg/217.svg";
+import svg17 from "@/app/assets/img/svg/17.svg";
 
 type ServiceProps = {
   classname?: string;
@@ -10,7 +15,7 @@ type ServiceProps = {
   title: React.ReactNode;
   description: string;
   details: string[];
-  icon: string;
+  icon: StaticImport;
 };
 
 const Service = ({
@@ -73,7 +78,7 @@ const Service = ({
           </li>
         ))}
       </ul>
-      <img
+      <Image
         className={cn(
           "hidden md:block absolute bottom-sm right-0 size-2xl z-50",
           alignEnd && "md:left-0"
@@ -105,7 +110,7 @@ const mlAiTitle = (
 
 const Services = () => {
   return (
-    <section className="section-spacing">
+    <section id="services" className="section-spacing">
       <TextAnimation whileInView className="section-desc">
         Services Provided “服务”
       </TextAnimation>
@@ -119,7 +124,7 @@ const Services = () => {
           title={fullstackTitle}
           description="I build robust, scalable web applications designed to boost your brand's online presence. Each solution is optimized for both performance and user experience, ensuring your audience is engaged and your business grows smoothly."
           details={["Custom Solutions", "Scalable Architecture", "API Integration"]}
-          icon="/img/svg/32.svg"
+          icon={svg32}
         />
         <Service
           classname="top-[calc(10vh+7.25rem)] mb-[7.25rem]"
@@ -128,7 +133,7 @@ const Services = () => {
           title={mobileTitle}
           description="I design and develop mobile apps that provide a seamless, intuitive user experience across all devices. Whether it's iOS or Android, I ensure your app stands out with cutting-edge features and user-centric design."
           details={["Cross-Platform", "Optimized UX", "Performance Focused"]}
-          icon="/img/svg/217.svg"
+          icon={svg217}
         />
         <Service
           classname="top-[calc(10vh+14.5rem)]"
@@ -136,7 +141,7 @@ const Services = () => {
           title={mlAiTitle}
           description="I deliver data-driven solutions powered by advanced machine learning techniques. From predictive models to NLP and AI integrations, I help businesses automate processes, gain insights, and make smarter decisions."
           details={["Predictive Models", "NLP & Chatbots", "Custom AI Integration"]}
-          icon="/img/svg/17.svg"
+          icon={svg17}
         />
       </div>
     </section>

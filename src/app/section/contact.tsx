@@ -1,5 +1,7 @@
-import { Send } from "lucide-react";
 import React from "react";
+import { motion } from "framer-motion";
+import { Send } from "lucide-react";
+import createFadeInProps from "@/lib/global/fade-in";
 
 const FlipButton = () => {
   return (
@@ -26,7 +28,10 @@ const FlipButton = () => {
 const Contact = () => {
   return (
     <section className="section-spacing pt-xs">
-      <div className="bg-black text-white max-sm:py-2xl max-sm:px-lg p-3xl rounded-bento text-center space-y-lg shadow-[0_6px_24px_6px_rgba(0,0,0,.18)] overflow-hidden">
+      <motion.div
+        className="bg-black text-white max-sm:py-2xl max-sm:px-lg p-3xl rounded-bento text-center space-y-lg shadow-[0_6px_24px_6px_rgba(0,0,0,.18)] overflow-hidden"
+        {...createFadeInProps({ amount: 0.25 })}
+      >
         <p className="font-mono base-small text-neutral-400">(Need a cool project?)</p>
         <h2 className="text-[3.25rem] sm:heading-1 font-bold tracking-tight">
           LET'S
@@ -37,7 +42,7 @@ const Contact = () => {
           TOGETHER
         </h2>
         <FlipButton />
-      </div>
+      </motion.div>
     </section>
   );
 };

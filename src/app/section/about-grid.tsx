@@ -1,11 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import { ChevronsLeftRightEllipsis, Code, Leaf, Pipette } from "lucide-react";
+import { ChevronsLeftRightEllipsis, Code, Leaf } from "lucide-react";
 import { DataScienceStack, SoftwareTechStack } from "@/components/global/tech-stack";
 import { cn } from "@/lib/utils";
-import map from "@/app/assets/img/map.png";
-import pfp from "@/app/assets/img/pfp.webp";
+import mapImg from "@/app/assets/img/background/map.png";
+import pfpImg from "@/app/assets/img/background/pfp.webp";
 import Hobbies from "@/components/global/hobbies";
+import createFadeInProps from "@/lib/global/fade-in";
+import { motion } from "framer-motion";
 
 type BentoBoxProps = {
   className?: string;
@@ -17,11 +19,12 @@ type BentoBoxProps = {
 
 const BentoBox = ({ className, children, title, subtitle, icon: Icon }: BentoBoxProps) => {
   return (
-    <div
+    <motion.div
       className={cn(
         "flex flex-col overflow-hidden bg-white border py-md rounded-bento shadow-[0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.04),0_12px_24px_rgba(0,0,0,.04)]",
         className
       )}
+      {...createFadeInProps({ amount: 0.36 })}
     >
       {title && subtitle && Icon && (
         <div className="px-md mb-sm lg:mb-md">
@@ -41,7 +44,7 @@ const BentoBox = ({ className, children, title, subtitle, icon: Icon }: BentoBox
         </div>
       )}
       <div className="flex-1 flex items-center">{children}</div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -62,13 +65,13 @@ const AboutGrid = () => {
         <BentoBox className="max-md:hidden relative flex-[0.45] lg:flex-[0.3] !p-2xs">
           <>
             <Image
-              src={map}
-              alt=""
+              src={mapImg}
+              alt="Map"
               className="w-full h-full object-cover rounded-[clamp(0.4375rem,1.094vi,0.875rem)]"
             />
             <Image
-              src={pfp}
-              alt=""
+              src={pfpImg}
+              alt="Profile Picture"
               className="size-xl rounded-full z-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shaodw border-2 border-neutral-300 p-1"
             />
           </>
@@ -96,13 +99,13 @@ const AboutGrid = () => {
         <BentoBox className="md:hidden relative aspect-[3/2] !p-2xs">
           <>
             <Image
-              src={map}
-              alt=""
+              src={mapImg}
+              alt="Map"
               className="size-full object-cover rounded-[clamp(0.625rem,1.094vi,0.875rem)]"
             />
             <Image
-              src={pfp}
-              alt=""
+              src={pfpImg}
+              alt="Profile Picture"
               className="size-xl rounded-full z-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shaodw border-2 border-neutral-300 p-1"
             />
           </>

@@ -1,6 +1,7 @@
 import React from "react";
 import Marquee from "@/components/ui/marquee";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type TechIconProps = {
   icon: string;
@@ -15,7 +16,13 @@ const TechIcon = ({ icon, className }: TechIconProps) => {
         className
       )}
     >
-      <img className="size-full object-cover" src={`/img/tech-stack/${icon}.svg`} />
+      <Image
+        className="size-full object-cover"
+        src={`/img/tech-stack/${icon}.svg`}
+        width={64}
+        height={64}
+        alt="Tech"
+      />
     </div>
   );
 };

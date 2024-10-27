@@ -11,13 +11,14 @@ import About from "./section/about";
 import Contact from "./section/contact";
 import AboutGrid from "./section/about-grid";
 import Footer from "./section/footer";
+import Navigation from "./section/navigation";
 
 export default function Page() {
   const { loaded, load } = useLoaded();
 
   useEffect(() => {
-    const loadTimer = setTimeout(load, 3800);
-    // const loadTimer = setTimeout(load, 100);
+    // const loadTimer = setTimeout(load, 3800);
+    const loadTimer = setTimeout(load, 300);
     return () => {
       clearTimeout(loadTimer);
     };
@@ -27,9 +28,10 @@ export default function Page() {
     <>
       {!loaded && <Welcome />}
       <main className={cn("h-full w-full", !loaded && "overflow-hidden")}>
+        <Navigation />
         <Intro />
         <div className="bg-white bg-grid-black/[0.09]">
-          <div className="bg-black min-h-[100rem] rounded-3xl z-30 relative">
+          <div className="bg-black min-h-[100rem] rounded-2xl lg:rounded-3xl z-30 relative pb-sm lg:pb-md">
             <Services />
             <Projects />
             <Journey />

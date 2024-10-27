@@ -4,8 +4,6 @@ import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import { GoogleGeminiEffect } from "@/components/ui/google-gemini-effect";
 import TextAnimation from "@/components/ui/text-animation";
 
-const initialPath = "M0,0 L1,0 L1,1 Q0.5,1,0,1";
-const finalPath = "M0,0 L1,0 L1,1 Q0.5,0.74,0,1";
 const swipeUpDelay = 2;
 const swipeUpDuration = 0.84;
 
@@ -36,9 +34,9 @@ const Welcome = () => {
       <svg className="w-0 h-0">
         <clipPath id="animated-clip" clipPathUnits="objectBoundingBox">
           <motion.path
-            d={initialPath}
+            d="M0,0 L1,0 L1,1 Q0.5,1,0,1"
             animate={{
-              d: finalPath,
+              d: "M0,0 L1,0 L1,1 Q0.5,0.74,0,1",
             }}
             transition={{
               delay: swipeUpDelay,

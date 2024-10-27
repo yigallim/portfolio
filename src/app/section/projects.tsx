@@ -7,7 +7,7 @@ type TechTagProps = {
   children: string;
 };
 
-export const TechTag = ({ className, children }: TechTagProps) => {
+const TechTag = ({ className, children }: TechTagProps) => {
   return (
     <div
       className={cn(
@@ -30,7 +30,7 @@ export const TechTag = ({ className, children }: TechTagProps) => {
 
 const Projects = () => {
   return (
-    <section className="section-spacing overflow-hidden">
+    <section id="works" className="section-spacing overflow-x-hidden">
       <TextAnimation whileInView className="section-desc">
         Selected Works “作品”
       </TextAnimation>

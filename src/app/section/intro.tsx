@@ -2,9 +2,13 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { easeExpo } from "@/lib/ease-expo";
+import { easeExpo } from "@/lib/global/ease-expo";
 import TextAnimation from "@/components/ui/text-animation";
 import useLoaded from "@/lib/state/loaded-store";
+import poolImg from "@/app/assets/img/background/pool.jpg";
+import tarumtImg from "@/app/assets/img/background/tarumt.jpg";
+import palmImg from "@/app/assets/img/background/palm.jpg";
+import thailandImg from "@/app/assets/img/background/thailand.jpg";
 
 const Intro = () => {
   const { loaded } = useLoaded();
@@ -33,6 +37,7 @@ const Intro = () => {
 
   return (
     <section
+      id="intro"
       ref={ref}
       className={cn("bg-white static", loaded ? "h-[200svh] mb-[-100svh]" : "h-screen")}
     >
@@ -43,7 +48,7 @@ const Intro = () => {
         transition={{ delay: 3, duration: 2.8, ease: easeExpo }}
       >
         <div className="flex items-center space-x-14">
-          <div className="text-neutral-600 base-large font-bold">
+          <div className="text-neutral-700 base-large font-bold">
             By Yang<sup className="font-medium">&copy;</sup>
           </div>
           <div className="font-medium text-neutral-500 base-normal">
@@ -54,11 +59,14 @@ const Intro = () => {
       <div className="sticky top-0 h-screen overflow-hidden flex items-center bg-grid-black/[0.09]">
         <div className="z-0 absolute pointer-events-none inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent,black)]" />
         <div className="section-inner">
-          <motion.div className="flex gap-3 origin-bottom" style={{ opacity, scale, translateY }}>
+          <motion.div
+            className="flex space-x-xs origin-bottom"
+            style={{ opacity, scale, translateY }}
+          >
             <div className="flex flex-col relative">
               <p className="font-medium text-[6.75rem] flex flex-col">
                 <TextAnimation
-                  delay={2.24}
+                  delay={2.4}
                   el="span"
                   className="font-bold tracking-tighter leading-tight text-neutral-800"
                 >
@@ -70,9 +78,9 @@ const Intro = () => {
                 initial="hidden"
                 animate="visible"
                 variants={fadeInVariants}
-                className="h-1.5 bg-neutral-400 mr-10 mt-8 mb-10"
+                className="h-1.5 bg-neutral-400 mr-10 mt-8 mb-10 rounded-lg"
               />
-              <div className="flex gap-2 justify-between items-end">
+              <div className="flex space-x-3xs justify-between items-end">
                 <TextAnimation
                   delay={2.52}
                   el="p"
@@ -104,7 +112,7 @@ const Intro = () => {
               >
                 <Image
                   className="size-full object-cover"
-                  src="/img/background/pool.jpg"
+                  src={poolImg}
                   alt="Pool"
                   width={200}
                   height={280}
@@ -119,7 +127,7 @@ const Intro = () => {
               >
                 <Image
                   className="size-full object-cover"
-                  src="/img/background/tarumt.jpg"
+                  src={tarumtImg}
                   alt="TARUMT"
                   width={270}
                   height={340}
@@ -134,7 +142,7 @@ const Intro = () => {
               >
                 <Image
                   className="size-full object-cover"
-                  src="/img/background/palm.jpg"
+                  src={palmImg}
                   alt="Palm"
                   width={300}
                   height={210}
@@ -149,7 +157,7 @@ const Intro = () => {
               >
                 <Image
                   className="size-full object-cover"
-                  src="/img/background/thailand.jpg"
+                  src={thailandImg}
                   alt="Thailand"
                   width={200}
                   height={220}

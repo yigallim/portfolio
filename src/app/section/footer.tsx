@@ -10,6 +10,7 @@ import {
   huynguyen,
 } from "@/lib/config/constant";
 import { ArrowUp, CornerDownLeft } from "lucide-react";
+import useSmoothNavigate from "@/lib/global/use-smooth-navigate";
 
 type FlipLinkProps = {
   label: string;
@@ -18,12 +19,22 @@ type FlipLinkProps = {
 
 const FlipLink = ({ label, href }: FlipLinkProps) => {
   const isInternalLink = href.startsWith("#");
+  const smoothScroll = useSmoothNavigate();
+
+  const toInternalLink = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isInternalLink) {
+      e.preventDefault();
+      smoothScroll(href.slice(1));
+    }
+  };
+
   return (
     <a
       className="leading-normal lg:leading-tight block relative h-fit overflow-hidden group [&>*]:duration-700 [&>*]:ease-expo"
       href={href}
       target={isInternalLink ? "_self" : "_blank"}
       rel={isInternalLink ? undefined : "noopener noreferrer"}
+      onClick={toInternalLink}
     >
       <span className="block group-hover:-translate-y-6">{label}</span>
       <span className="absolute top-0 bottom-0 left-0 right-0 translate-y-6 group-hover:translate-y-0">
@@ -66,7 +77,7 @@ const navigationLinks: LinkEntry[] = [
   { label: "Intro", href: "#intro" },
   { label: "Services", href: "#services" },
   { label: "Works", href: "#works" },
-  { label: "Journey", href: "#works" },
+  { label: "Journey", href: "#journey" },
   { label: "About", href: "#about" },
 ];
 const socialLinks: LinkEntry[] = [linkedin, instagram, facebook, github];
@@ -74,9 +85,14 @@ const resourceLinks: LinkEntry[] = [figma, aceternity, huynguyen];
 
 const Footer = () => {
   const [time, setTime] = useState("");
+  const smoothScroll = useSmoothNavigate();
+
   const updateTime = () => {
     const malaysiaTime = moment().tz("Asia/Kuala_Lumpur").format("h.mm A");
     setTime(malaysiaTime);
+  };
+  const navigateToTop = () => {
+    smoothScroll(0);
   };
 
   useEffect(() => {
@@ -114,7 +130,7 @@ const Footer = () => {
             <p className="font-medium font-mono text-neutral-600">{time}, KUALA LUMPUR</p>
           </div>
           <div className="hidden md:block hover:scale-[85%] duration-700 ease-expo">
-            <button className="rounded-full bg-neutral-300 p-sm">
+            <button onClick={navigateToTop} className="rounded-full bg-neutral-300 p-sm">
               <ArrowUp className="size-lg text-neutral-600" />
             </button>
           </div>
