@@ -38,7 +38,9 @@ const Contact = () => {
           </span>
           <span>TOGETHER</span>
         </h2>
-        <FlipButton />
+        <a className="block" href="mailto:yang@gmail.com">
+          <FlipButton />
+        </a>
       </div>
     </section>
   );
