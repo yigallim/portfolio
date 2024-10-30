@@ -196,7 +196,7 @@ const Navigation = () => {
 
       <motion.button
         className={cn(
-          `z-50 duration-700 ease-expo bg-neutral-300 p-[2rem] sm:p-lg top-md right-md md:top-lg md:right-xl hover:scale-[85%] rounded-full flex-col flex justify-center items-center fixed`
+          `z-50 duration-700 ease-expo bg-neutral-300 p-[2rem] sm:p-lg top-md right-md md:top-lg md:right-xl hover:!scale-[85%] rounded-full flex-col flex justify-center items-center fixed`
         )}
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
