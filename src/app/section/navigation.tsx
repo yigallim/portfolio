@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, Variants, motion } from "framer-motion";
-import { github, linkedin } from "@/lib/config/constant";
+import { github, linkedin, note } from "@/lib/config/constant";
 import { easeExpo } from "@/lib/global/ease-expo";
 import useSmoothNavigate from "@/lib/global/use-smooth-navigate";
 
@@ -49,10 +49,7 @@ const LinkAnchor = ({ href, label, gradient, onClick }: LinkAnchorProps) => {
   );
 };
 
-const links = [
-  { href: linkedin.href, label: linkedin.label },
-  { href: github.href, label: github.label },
-];
+const links = [linkedin, github, note];
 
 const sidebar: Variants = {
   open: {
@@ -156,17 +153,17 @@ const Navigation = () => {
         {isOpen && (
           <div
             key={`sidebar-${key}`}
-            className="z-50 fixed top-2xs bottom-2xs right-0 pl-2xs max-w-[32rem] md:max-w-[33.5rem] lg:max-w-[36rem] w-full overflow-clip"
+            className="z-50 fixed top-2xs bottom-2xs right-0 pl-2xs max-w-[32rem] md:max-w-[33.5rem] lg:max-w-[36rem] w-full"
           >
             <motion.nav
-              className="z-50 size-full rounded-l-xl bg-[#1C1C1C]"
+              className="z-50 size-full rounded-l-xl bg-[#1C1C1C] relative overflow-hidden"
               variants={sidebar}
               animate="open"
               exit="closed"
               initial="initial"
             >
               <div className="z-40 relative size-full py-xl px-lg sm:px-xl md:px-2xl flex flex-col justify-between overflow-hidden">
-                <ul className="heading-1 md:heading-2 font-bold space-y-2xs leading-none">
+                <ul className="heading-2 font-bold space-y-2xs leading-none">
                   {navItems.map((item) => (
                     <li key={item.label}>
                       <LinkAnchor
@@ -197,12 +194,17 @@ const Navigation = () => {
         )}
       </AnimatePresence>
 
-      <button
+      <motion.button
         className={cn(
-          `z-50 duration-700 ease-expo bg-neutral-300 p-[2rem] sm:p-lg top-md right-md md:top-lg md:right-xl hover:scale-[85%]
-   rounded-full flex-col flex justify-center items-center fixed`,
-          true ? "scale-100" : "scale-0"
+          `z-50 duration-700 ease-expo bg-neutral-300 p-[2rem] sm:p-lg top-md right-md md:top-lg md:right-xl hover:scale-[85%] rounded-full flex-col flex justify-center items-center fixed`
         )}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{
+          duration: 0.7,
+          delay: 3,
+          ease: easeExpo,
+        }}
         onClick={handleToggle}
       >
         <div
@@ -217,7 +219,7 @@ const Navigation = () => {
             isOpen ? "-rotate-45" : "translate-y-1"
           )}
         />
-      </button>
+      </motion.button>
     </>
   );
 };

@@ -1,9 +1,7 @@
 import React from "react";
 import TextAnimation from "@/components/ui/text-animation";
-import tarumtImg from "@/app/assets/img/background/tarumt.jpg";
+import tarumtImg from "@/app/assets/img/background/tarumt.webp";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import createFadeInProps from "@/lib/global/fade-in";
 
 const About = () => {
   return (
@@ -17,30 +15,21 @@ const About = () => {
 
       <div className="grid grid-cols-12 mt-lg md:mt-xl lg:mt-2xl">
         <div className="col-span-12 md:col-span-4">
-          <motion.div
-            className="w-full rounded-bento overflow-hidden shadow-[0_6px_24px_6px_rgba(0,0,0,.12)]"
-            {...createFadeInProps({ amount: 0.25 })}
-          >
+          <div className="w-full min-h-[15rem] rounded-bento overflow-hidden shadow-[0_6px_24px_6px_rgba(0,0,0,.12)] bg-neutral-400">
             <Image className="object-cover w-full" src={tarumtImg} alt="TARUMT" />
-          </motion.div>
+          </div>
         </div>
         <div className="col-span-1 mb-md" />
         <div className="col-span-12 md:col-span-7">
-          <motion.p
-            className="base-large lg:sub-heading font-medium"
-            {...createFadeInProps({ amount: 0.8 })}
-          >
+          <p className="base-large lg:sub-heading font-medium">
             My main competence lies in full stack development. I have been coding since 2022, I have
             <span className="font-semibold bg-gradient-to-r from-[#8980ED] via-[#EC787F] to-[#FFC170] text-transparent bg-clip-text">
               &nbsp;2 years of experience&nbsp;
             </span>
             in web development. Additionally, I am a data scientist skilled in machine learning and
             data analysis, with a strong problem-solving skills.
-          </motion.p>
-          <motion.div
-            className="mt-lg lg:mt-xl xl:mt-2xl flex flex-col lg:flex-row lg:space-x-lg text-neutral-800"
-            {...createFadeInProps({ amount: 0.5 })}
-          >
+          </p>
+          <div className="mt-lg lg:mt-xl xl:mt-2xl flex flex-col lg:flex-row lg:space-x-lg text-neutral-800">
             <p className="font-mono whitespace-nowrap leading-relaxed base-small mb-2xs lg:mb-xs">
               (ABOUT ME)
             </p>
@@ -54,7 +43,7 @@ const About = () => {
               new coding techniques, expanding my knowledge in data science, or honing soft skills
               like sports and music.
             </p>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

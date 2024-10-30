@@ -19,6 +19,10 @@ body {
   .rounded-bento {
     @apply rounded-[clamp(1rem,1.25vi+0.5rem,1.5rem)];
   }
+
+  .image-shadow {
+    @apply shadow-[0_4px_24px_6px_rgba(0,0,0,.14)];
+  }
 }
 
 @layer base {
@@ -58,7 +62,7 @@ body {
   }
 
   .section-inner {
-    @apply mx-[clamp(1.5rem,6vi,6vi)] 3xl:mx-auto 3xl:max-w-[1500px] 3xl:w-[1500px];
+    @apply mx-[clamp(1.25rem,4.5vi,4.5rem)] 3xl:mx-auto 3xl:max-w-[1500px] 3xl:w-[1500px];
   }
   .section-spacing {
     @apply section-inner py-[clamp(4rem,2.5rem+4vi,6rem)];

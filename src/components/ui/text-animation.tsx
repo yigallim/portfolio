@@ -79,7 +79,7 @@ const TextAnimation = ({
         initial="hidden"
         animate={whileInView ? undefined : "visible"}
         whileInView={whileInView ? "visible" : undefined}
-        viewport={whileInView ? { once: true, amount: 1 } : undefined}
+        viewport={whileInView ? { once: true, amount: 0.75 } : undefined}
         transition={{
           delayChildren: delay,
           staggerChildren,

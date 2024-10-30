@@ -5,6 +5,10 @@ export const linkedin = {
 export const facebook = { label: "Facebook", href: "https://www.facebook.com/yangyang.lim.397" };
 export const instagram = { label: "Instagram", href: "https://www.instagram.com/yeyang0923" };
 export const github = { label: "GitHub", href: "https://github.com/yigallim" };
+export const note = {
+  label: "Note",
+  href: "",
+};
 export const figma = {
   label: "Figma",
   href: "https://www.figma.com/design/fGSby18GzR1ZDApH16LeZb/Portfolio?node-id=0-1",

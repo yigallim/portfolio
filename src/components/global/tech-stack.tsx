@@ -19,8 +19,8 @@ const TechIcon = ({ icon, className }: TechIconProps) => {
       <Image
         className="size-full object-cover"
         src={`/img/tech-stack/${icon}.svg`}
-        width={64}
-        height={64}
+        width={150}
+        height={150}
         alt="Tech"
       />
     </div>
@@ -34,7 +34,6 @@ const softwareSlugs = [
   "typescript",
   "tailwindcss",
   "react",
-  "redux",
   "vuedotjs",
   "nodedotjs",
   "express",
@@ -42,7 +41,6 @@ const softwareSlugs = [
   "postgresql",
   "mysql",
   "mongodb",
-  "vercel",
   "spring",
   "git",
   "github",

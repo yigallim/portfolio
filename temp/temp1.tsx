@@ -1,144 +1,282 @@
-import React from "react";
-import TextAnimation from "@/components/ui/text-animation";
+import React, { useRef } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { BorderBeam } from "@/components/ui/border-beam";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { easeExpo } from "@/lib/global/ease-expo";
+import TextAnimation from "@/components/ui/text-animation";
+import useLoaded from "@/lib/state/loaded-store";
+import poolImg from "@/app/assets/img/background/pool.jpg";
+import tarumtImg from "@/app/assets/img/background/tarumt.jpg";
+import palmImg from "@/app/assets/img/background/palm.jpg";
+import thailandImg from "@/app/assets/img/background/thailand.jpg";
 
-type ServiceProps = {
-  classname?: string;
-  style?: React.CSSProperties;
-  count: number;
-  title: React.ReactNode;
-  description: string;
-  details: string[];
-  alignEnd?: boolean;
-};
+const Intro = () => {
+  const { loaded } = useLoaded();
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.35], [1, 0.93]);
+  const translateY = useTransform(scrollYProgress, [0, 0.55], [0, 80]);
 
-const Service = ({
-  classname,
-  style,
-  count,
-  title,
-  description,
-  details,
-  alignEnd = false,
-}: ServiceProps) => {
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: "10%" },
+    visible: (i: number) => ({
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        ease: easeExpo,
+        delay: i * 0.34 + 2.48,
+        duration: 2.8,
+      },
+    }),
+  };
+
   return (
-    <div
-      style={style}
-      className={cn(
-        "sticky top-0 border-t border-neutral-600 pt-md overflow-hidden bg-black",
-        classname,
-        alignEnd && "ml-auto text-end"
-      )}
+    <section
+      id="intro"
+      ref={ref}
+      className={cn("bg-white static", loaded ? "h-[200svh] mb-[-100svh]" : "h-screen")}
     >
-      <h3
-        className={cn(
-          "flex text-neutral-200 heading-3 font-bold mb-lg",
-          alignEnd ? "justify-end" : "justify-start"
-        )}
+      <motion.div
+        className="section-inner h-0 relative top-lg z-10"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ delay: 3, duration: 2.8, ease: easeExpo }}
       >
-        <span className={cn(alignEnd ? "order-2 ml-xs" : "mr-xs")}>{`(${
-          count < 10 ? "0" + count : count
-        })`}</span>
-        <span>{title}</span>
-      </h3>
-      <p
-        className={cn(
-          "text-neutral-400 base-normal font-normal mb-md max-w-[50ch]",
-          alignEnd && "ml-auto"
-        )}
-      >
-        {description}
-      </p>
-      <ul className={cn("md:w-[clamp(25rem,50%,30rem)]", alignEnd && "ml-auto")}>
-        {details.map((detail, index) => (
-          <li
-            className={cn(
-              "flex py-sm",
-              alignEnd ? "justify-end" : "justify-start",
-              index !== details.length - 1 && "border-b border-b-neutral-600"
-            )}
-            key={index}
+        <div className="flex max-lg:flex-col max-lg:space-y-2xs lg:items-center lg:space-x-xl mr-3xl">
+          <div className="text-neutral-700 base-large font-bold">
+            By Yang<sup className="font-medium">&copy;</sup>
+          </div>
+          <div className="font-medium text-neutral-500 base-normal">
+            (Software Engineer & Data Scientist)
+          </div>
+        </div>
+      </motion.div>
+      <div className="sticky top-0 h-screen overflow-hidden flex lg:items-center bg-grid-black/[0.09]">
+        <div className="z-0 absolute pointer-events-none inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent,black)]" />
+        <div className="section-inner w-full max-lg:h-full">
+          <motion.div
+            className="h-full flex flex-col justify-between sm:justify-end h-origin-bottom relative lg:hidden pt-3xl pb-xl md:pb-lg"
+            style={{ opacity, scale, translateY }}
           >
-            <span
-              className={cn(
-                "font-mono text-neutral-500 base-normal",
-                alignEnd ? "order-2 ml-md" : "mr-md"
-              )}
-            >{`0${index + 1}`}</span>
-            <span className="text-neutral-200 heading-6 font-bold tracking-normal leading-none">
-              {detail}
-            </span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+            <div className="flex w-full max-sm:mt-lg">
+              <div className="w-full flex items-start gap-x-2xs n">
+                <motion.div
+                  className="max-sm:hidden mt-[12.8%] flex-[0.2597] aspect-[5/7] overflow-hidden bg-neutral-100 rounded-xl"
+                  custom={1}
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeInVariants}
+                >
+                  <Image
+                    className="size-full object-cover"
+                    src={poolImg}
+                    alt="Pool"
+                    width={200}
+                    height={280}
+                  />
+                </motion.div>
+                <motion.div
+                  className="max-xs:hidden flex-1 sm:flex-[0.3506] aspect-[27/34] overflow-hidden bg-neutral-100 rounded-xl"
+                  custom={2}
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeInVariants}
+                >
+                  <Image
+                    className="size-full object-cover"
+                    src={tarumtImg}
+                    alt="TARUMT"
+                    width={270}
+                    height={340}
+                  />
+                </motion.div>
+                <div className="flex-1 sm:flex-[0.3896]">
+                  <motion.div
+                    className="max-xs:hidden w-full aspect-[11/7] overflow-hidden bg-neutral-100 rounded-xl"
+                    custom={3}
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeInVariants}
+                  >
+                    <Image
+                      className="size-full object-cover"
+                      src={palmImg}
+                      alt="Palm"
+                      width={300}
+                      height={210}
+                    />
+                  </motion.div>
+                  <motion.div
+                    className="xs:mt-2xs overflow-hidden xs:w-[70%] aspect-square xs:aspect-square bg-neutral-100 rounded-xl"
+                    custom={4}
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeInVariants}
+                  >
+                    <Image
+                      className="size-full object-cover"
+                      src={thailandImg}
+                      alt="Thailand"
+                      width={200}
+                      height={220}
+                    />
+                  </motion.div>
+                </div>
+              </div>
+            </div>
 
-const Services = () => {
-  return (
-    <section className="section-spacing">
-      <TextAnimation whileInView className="section-desc">
-        Services Provided “服务”
-      </TextAnimation>
-      <TextAnimation whileInView el="h2" className="section-heading mt-3xs">
-        HOW CAN I HELP YOU.
-      </TextAnimation>
-      <div className="mt-3xl">
-        <Service
-          style={{ top: "calc(10vh + 0em)", marginBottom: "16em" }}
-          count={1}
-          title={
-            <span
-              style={{
-                backgroundImage: "linear-gradient(to right, #ED826E, #E14E38)",
-              }}
-              className="text-gradient"
+            <div className="mt-sm sm:mt-xl md:mt-lg flex max-sm:flex-col gap-x-md justify-between sm:items-end relative">
+              <p className="font-medium heading-3 flex flex-col">
+                <TextAnimation
+                  delay={2.4}
+                  el="span"
+                  className="font-bold tracking-tighter leading-tight text-neutral-800"
+                >
+                  Lim Yuet Yang
+                </TextAnimation>
+              </p>
+              <motion.div
+                custom={0.5}
+                initial="hidden"
+                animate="visible"
+                variants={fadeInVariants}
+                className="h-1 bg-neutral-400 mt-2 mb-3 rounded-lg"
+              />
+              <div className="flex sm:flex-col-reverse items-end gap-y-3xs sm:gap-y-xs">
+                <TextAnimation
+                  delay={2.52}
+                  el="p"
+                  className="heading-1 font-semibold tracking-normal leading-none text-neutral-800"
+                >
+                  林業陽
+                </TextAnimation>
+                <motion.p
+                  custom={0.5}
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeInVariants}
+                  className="base-normal sm:base-large text-neutral-500 font-semibold max-sm:ml-sm"
+                >
+                  /lín yè yáng/
+                </motion.p>
+              </div>
+            </div>
+          </motion.div>
+          <motion.div
+            className="flex space-x-xs origin-bottom max-lg:hidden"
+            style={{ opacity, scale, translateY }}
+          >
+            <div className="flex flex-col relative">
+              <p className="font-medium text-[6.75rem] flex flex-col">
+                <TextAnimation
+                  delay={2.4}
+                  el="span"
+                  className="font-bold tracking-tighter leading-tight text-neutral-800"
+                >
+                  Lim Yuet Yang
+                </TextAnimation>
+              </p>
+              <motion.div
+                custom={0.5}
+                initial="hidden"
+                animate="visible"
+                variants={fadeInVariants}
+                className="h-1.5 bg-neutral-400 mr-10 mt-8 mb-10 rounded-lg"
+              />
+              <div className="flex space-x-3xs justify-between items-end">
+                <TextAnimation
+                  delay={2.52}
+                  el="p"
+                  className="text-[10.25rem] font-semibold tracking-normal leading-none text-neutral-800"
+                >
+                  林業陽
+                </TextAnimation>
+                <motion.p
+                  custom={0.5}
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeInVariants}
+                  className="text-[28px] text-neutral-500 font-semibold"
+                >
+                  /lín yè yáng/
+                </motion.p>
+              </div>
+            </div>
+            <div
+              className="overflow-visible z-10 relative top-[-80px] h-[300px] flex-1 w-[800px] 
+          [&>*]:rounded-xl [&>*]:overflow-hidden [&>*]:bg-neutral-100 [&>*]:absolute"
             >
-              Fullstack Web Development
-            </span>
-          }
-          description="I build robust, scalable web applications designed to boost your brand's online presence. Each solution is optimized for both performance and user experience, ensuring your audience is engaged and your business grows smoothly."
-          details={["Custom Solutions", "Scalable Architecture", "API Integration"]}
-        />
-        <Service
-          style={{ top: "calc(10vh + 8em)", marginBottom: "8em" }}
-          alignEnd
-          count={2}
-          title={
-            <span
-              style={{
-                backgroundImage:
-                  "linear-gradient(90deg, rgba(255,203,112,1) 0%, rgba(175,255,197,1) 100%)",
-              }}
-              className="text-gradient"
-            >
-              Mobile App Development
-            </span>
-          }
-          description="I design and develop mobile apps that provide a seamless, intuitive user experience across all devices. Whether it's iOS or Android, I ensure your app stands out with cutting-edge features and user-centric design."
-          details={["Cross-Platform", "Optimized UX", "Performance Focused"]}
-        />
-        <Service
-          style={{ top: "calc(10vh + 8em)" }}
-          count={3}
-          title={
-            <span
-              style={{
-                backgroundImage: "linear-gradient(to right, #7549F2, #DE53F7)",
-              }}
-              className="text-gradient"
-            >
-              Machine Learning & AI Solutions
-            </span>
-          }
-          description="I deliver data-driven solutions powered by advanced machine learning techniques. From predictive models to NLP and AI integrations, I help businesses automate processes, gain insights, and make smarter decisions."
-          details={["Predictive Models", "NLP & Chatbots", "Custom AI Integration"]}
-        />
+              <motion.div
+                className="top-[150px] left-[40px] w-[200px] h-[280px]"
+                custom={1}
+                initial="hidden"
+                animate="visible"
+                variants={fadeInVariants}
+              >
+                <Image
+                  className="size-full object-cover"
+                  src={poolImg}
+                  alt="Pool"
+                  width={200}
+                  height={280}
+                />
+              </motion.div>
+              <motion.div
+                className="top-[30px] left-[256px] w-[270px] h-[340px]"
+                custom={2}
+                initial="hidden"
+                animate="visible"
+                variants={fadeInVariants}
+              >
+                <Image
+                  className="size-full object-cover"
+                  src={tarumtImg}
+                  alt="TARUMT"
+                  width={270}
+                  height={340}
+                />
+              </motion.div>
+              <motion.div
+                className="top-[-20px] left-[542px] w-[300px] h-[210px]"
+                custom={3}
+                initial="hidden"
+                animate="visible"
+                variants={fadeInVariants}
+              >
+                <Image
+                  className="size-full object-cover"
+                  src={palmImg}
+                  alt="Palm"
+                  width={300}
+                  height={210}
+                />
+              </motion.div>
+              <motion.div
+                className="top-[206px] left-[542px] w-[200px] h-[220px]"
+                custom={4}
+                initial="hidden"
+                animate="visible"
+                variants={fadeInVariants}
+              >
+                <Image
+                  className="size-full object-cover"
+                  src={thailandImg}
+                  alt="Thailand"
+                  width={200}
+                  height={220}
+                />
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
 };
 
-export default Services;
+export default Intro;

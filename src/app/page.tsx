@@ -17,17 +17,16 @@ export default function Page() {
   const { loaded, load } = useLoaded();
 
   useEffect(() => {
-    // const loadTimer = setTimeout(load, 3800);
-    const loadTimer = setTimeout(load, 300);
+    const loadTimer = setTimeout(load, 3800);
     return () => {
       clearTimeout(loadTimer);
     };
-  }, []);
+  });
 
   return (
     <>
       {!loaded && <Welcome />}
-      <main className={cn("h-full w-full", !loaded && "overflow-hidden")}>
+      <main className={cn("size-full", !loaded && "overflow-hidden")}>
         <Navigation />
         <Intro />
         <div className="bg-white bg-grid-black/[0.09]">

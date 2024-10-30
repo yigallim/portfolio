@@ -3,11 +3,9 @@ import Image from "next/image";
 import { ChevronsLeftRightEllipsis, Code, Leaf } from "lucide-react";
 import { DataScienceStack, SoftwareTechStack } from "@/components/global/tech-stack";
 import { cn } from "@/lib/utils";
-import mapImg from "@/app/assets/img/background/map.png";
+import mapImg from "@/app/assets/img/background/map.jpg";
 import pfpImg from "@/app/assets/img/background/pfp.webp";
 import Hobbies from "@/components/global/hobbies";
-import createFadeInProps from "@/lib/global/fade-in";
-import { motion } from "framer-motion";
 
 type BentoBoxProps = {
   className?: string;
@@ -19,12 +17,11 @@ type BentoBoxProps = {
 
 const BentoBox = ({ className, children, title, subtitle, icon: Icon }: BentoBoxProps) => {
   return (
-    <motion.div
+    <div
       className={cn(
         "flex flex-col overflow-hidden bg-white border py-md rounded-bento shadow-[0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.04),0_12px_24px_rgba(0,0,0,.04)]",
         className
       )}
-      {...createFadeInProps({ amount: 0.36 })}
     >
       {title && subtitle && Icon && (
         <div className="px-md mb-sm lg:mb-md">
@@ -44,7 +41,7 @@ const BentoBox = ({ className, children, title, subtitle, icon: Icon }: BentoBox
         </div>
       )}
       <div className="flex-1 flex items-center">{children}</div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -96,12 +93,12 @@ const AboutGrid = () => {
             <DataScienceStack />
           </div>
         </BentoBox>
-        <BentoBox className="md:hidden relative aspect-[3/2] !p-2xs">
+        <BentoBox className="md:hidden relative !p-2xs">
           <>
             <Image
               src={mapImg}
               alt="Map"
-              className="size-full object-cover rounded-[clamp(0.625rem,1.094vi,0.875rem)]"
+              className="size-full aspect-[3/2] object-cover rounded-[clamp(0.625rem,1.094vi,0.875rem)]"
             />
             <Image
               src={pfpImg}

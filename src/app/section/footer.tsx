@@ -5,6 +5,7 @@ import {
   linkedin,
   facebook,
   instagram,
+  note,
   figma,
   aceternity,
   huynguyen,
@@ -81,7 +82,7 @@ const navigationLinks: LinkEntry[] = [
   { label: "About", href: "#about" },
 ];
 const socialLinks: LinkEntry[] = [linkedin, instagram, facebook, github];
-const resourceLinks: LinkEntry[] = [figma, aceternity, huynguyen];
+const resourceLinks: LinkEntry[] = [note, figma, aceternity, huynguyen];
 
 const Footer = () => {
   const [time, setTime] = useState("");

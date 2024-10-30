@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import SmoothScrolling from "@/components/global/smooth-scrolling";
-import "./globals.css";
 import { cn } from "@/lib/utils";
+import "./globals.css";
 
 const inter = localFont({
   src: "./assets/font/inter-font-v2.woff2",

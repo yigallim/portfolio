@@ -41,7 +41,7 @@ const Projects = () => {
         <a className="w-full md:w-[57%]">
           <div className="w-full mb-xs lg:mb-sm rounded-[4%] aspect-[6/6.5] md:aspect-[6/7] relative overflow-hidden bg-neutral-700"></div>
           <div className="text-neutral-100 flex items-center justify-between flex-wrap gap-x-md lg:gap-x-lg gap-y-3xs lg:gap-y-2xs">
-            <h3 className="heading-6 lg:heading-5 font-semibold">Food Ordering System</h3>
+            <h3 className="heading-6 lg:heading-5 font-semibold">Coming Soon</h3>
             <div className="flex space-x-3xs lg:space-x-2 items-start justify-end">
               <TechTag>HTML</TechTag>
               <TechTag>CSS</TechTag>
@@ -52,7 +52,7 @@ const Projects = () => {
         <a className="w-full flex-1">
           <div className="w-full mb-2xs lg:mb-xs rounded-[4%] aspect-[6/6.5] relative overflow-hidden bg-neutral-700"></div>
           <div className="text-neutral-100 flex items-center justify-between flex-wrap gap-x-md lg:gap-x-lg gap-y-3xs lg:gap-y-2xs">
-            <h3 className="heading-6 lg:heading-5 font-semibold">Tetris Clone</h3>
+            <h3 className="heading-6 lg:heading-5 font-semibold">Coming Soon</h3>
             <div className="flex space-x-3xs lg:space-x-2 items-start justify-end">
               <TechTag>HTML</TechTag>
               <TechTag>CSS</TechTag>
@@ -65,7 +65,7 @@ const Projects = () => {
         <a className="w-full flex-1">
           <div className="w-full mb-2xs lg:mb-xs rounded-[4%] aspect-[6/6.5] relative overflow-hidden bg-neutral-700"></div>
           <div className="text-neutral-100 flex items-center justify-between flex-wrap gap-x-md lg:gap-x-lg gap-y-3xs lg:gap-y-2xs">
-            <h3 className="heading-6 lg:heading-5 font-semibold">Tetris Clone</h3>
+            <h3 className="heading-6 lg:heading-5 font-semibold">Coming Soon</h3>
             <div className="flex space-x-3xs lg:space-x-2 items-start justify-end">
               <TechTag>HTML</TechTag>
               <TechTag>CSS</TechTag>
@@ -76,7 +76,7 @@ const Projects = () => {
         <a className="w-full md:w-[57%]">
           <div className="w-full mb-xs lg:mb-sm rounded-[4%] aspect-[6/6.5] md:aspect-[6/7] relative overflow-hidden bg-neutral-700"></div>
           <div className="text-neutral-100 flex items-center justify-between flex-wrap gap-x-md lg:gap-x-lg gap-y-3xs lg:gap-y-2xs">
-            <h3 className="heading-6 lg:heading-5 font-semibold">Food Ordering System</h3>
+            <h3 className="heading-6 lg:heading-5 font-semibold">Coming Soon</h3>
             <div className="flex space-x-3xs lg:space-x-2 items-start justify-end">
               <TechTag>HTML</TechTag>
               <TechTag>CSS</TechTag>
