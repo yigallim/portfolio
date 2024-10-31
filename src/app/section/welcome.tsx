@@ -7,6 +7,16 @@ import TextAnimation from "@/components/ui/text-animation";
 const swipeUpDelay = 2;
 const swipeUpDuration = 0.84;
 
+const width = window.innerWidth;
+let curveValue;
+if (width < 640) {
+  curveValue = 0.9;
+} else if (width >= 640 && width < 1024) {
+  curveValue = 0.82;
+} else {
+  curveValue = 0.74;
+}
+
 const Welcome = () => {
   const ref = React.useRef(null);
 
@@ -36,7 +46,7 @@ const Welcome = () => {
           <motion.path
             d="M0,0 L1,0 L1,1 Q0.5,1,0,1"
             animate={{
-              d: "M0,0 L1,0 L1,1 Q0.5,0.74,0,1",
+              d: `M0,0 L1,0 L1,1 Q0.5,${curveValue},0,1`,
             }}
             transition={{
               delay: swipeUpDelay,
