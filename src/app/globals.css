@@ -68,7 +68,7 @@ body {
     @apply section-inner py-[clamp(4rem,2.5rem+4vi,6rem)];
   }
   .section-desc {
-    @apply text-neutral-400 font-semibold base-large;
+    @apply text-neutral-400 font-bold base-large;
   }
   .section-heading {
     @apply text-neutral-100 text-gradient font-bold leading-[1.15]

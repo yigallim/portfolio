@@ -127,7 +127,7 @@ const Intro = () => {
                 <TextAnimation
                   delay={2.52}
                   el="p"
-                  className="heading-1 font-semibold tracking-normal leading-none text-neutral-800"
+                  className="heading-1 font-bold tracking-normal leading-none text-neutral-800"
                 >
                   林業陽
                 </TextAnimation>
@@ -168,7 +168,7 @@ const Intro = () => {
                 <TextAnimation
                   delay={2.52}
                   el="p"
-                  className="text-[10.25rem] font-semibold tracking-normal leading-none text-neutral-800"
+                  className="text-[10.25rem] font-bold tracking-normal leading-none text-neutral-800"
                 >
                   林業陽
                 </TextAnimation>
