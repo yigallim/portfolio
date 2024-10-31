@@ -107,7 +107,7 @@ const Intro = () => {
             </div>
 
             <div className="mt-sm sm:mt-xl md:mt-lg flex max-sm:flex-col gap-x-md justify-between sm:items-end relative">
-              <p className="font-medium heading-3 flex flex-col">
+              <p className="heading-3 flex flex-col">
                 <TextAnimation
                   delay={2.4}
                   el="span"
@@ -148,7 +148,7 @@ const Intro = () => {
             style={{ opacity, scale, translateY }}
           >
             <div className="flex flex-col relative">
-              <p className="font-medium text-[6.75rem] flex flex-col">
+              <p className="text-[6.75rem] flex flex-col">
                 <TextAnimation
                   delay={2.4}
                   el="span"

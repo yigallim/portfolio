@@ -7,16 +7,6 @@ import TextAnimation from "@/components/ui/text-animation";
 const swipeUpDelay = 2;
 const swipeUpDuration = 0.84;
 
-const width = window.innerWidth;
-let curveValue;
-if (width < 640) {
-  curveValue = 0.9;
-} else if (width >= 640 && width < 1024) {
-  curveValue = 0.82;
-} else {
-  curveValue = 0.74;
-}
-
 const Welcome = () => {
   const ref = React.useRef(null);
 
@@ -38,6 +28,16 @@ const Welcome = () => {
 
   const title = <TextAnimation delay={0.4}>Welcome</TextAnimation>;
   const description = <TextAnimation delay={0.4}>&copy; Folio 2024</TextAnimation>;
+
+  const width = window.innerWidth;
+  let curveValue;
+  if (width < 640) {
+    curveValue = 0.9;
+  } else if (width >= 640 && width < 1024) {
+    curveValue = 0.82;
+  } else {
+    curveValue = 0.74;
+  }
 
   return (
     <>
