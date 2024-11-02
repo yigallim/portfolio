@@ -29,8 +29,8 @@ const Contact = () => {
     <section className="section-spacing pt-xs">
       <div className="bg-black text-white max-sm:py-2xl max-sm:px-lg p-3xl rounded-bento text-center space-y-lg shadow-[0_6px_24px_6px_rgba(0,0,0,.18)] overflow-hidden">
         <p className="font-mono base-small text-neutral-400">(Need a cool project?)</p>
-        <h2 className="text-[3.25rem] sm:heading-1 font-bold tracking-tight">
-          <span className="flex flex-wrap justify-center gap-x-[0.275em]">
+        <h2 className="text-[2.95rem] sm:heading-1 font-bold tracking-tight">
+          <span className="flex flex-wrap justify-center gap-x-[0.25em]">
             <span>LET&apos;S</span>
             <span className="bg-gradient-to-r from-[#77d2ff] via-[#25A5E6] to-[#252FFF] text-transparent bg-clip-text">
               WORK

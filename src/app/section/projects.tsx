@@ -37,7 +37,7 @@ const Projects = () => {
       <TextAnimation whileInView el="h2" className="section-heading mt-3xs">
         PROJECT SHOWCASE.
       </TextAnimation>
-      <div className="mt-3xl w-full max-md:flex-col flex items-center max-md:space-y-xl md:space-x-lg lg:space-x-xl">
+      <div className="mt-2xl sm:mt-3xl w-full max-md:flex-col flex items-center max-md:space-y-xl md:space-x-lg lg:space-x-xl">
         <a className="w-full md:w-[57%]">
           <div className="w-full mb-xs lg:mb-sm rounded-[4%] aspect-[6/6.5] md:aspect-[6/7] relative overflow-hidden bg-neutral-700"></div>
           <div className="text-neutral-100 flex items-center justify-between flex-wrap gap-x-md lg:gap-x-lg gap-y-3xs lg:gap-y-2xs">

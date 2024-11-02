@@ -117,7 +117,7 @@ const Services = () => {
       <TextAnimation whileInView el="h2" className="section-heading mt-3xs">
         HOW CAN I HELP YOU.
       </TextAnimation>
-      <div className="mt-3xl">
+      <div className="mt-2xl sm:mt-3xl">
         <Service
           classname="top-[10vh] mb-[14.5rem]"
           count={1}

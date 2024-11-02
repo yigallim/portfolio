@@ -116,7 +116,7 @@ const Journey = () => {
       <TextAnimation whileInView el="h2" className="section-heading mt-3xs">
         MY CAREER TIMELINE.
       </TextAnimation>
-      <div className="mt-3xl space-y-xl md:space-y-2xl">
+      <div className="mt-2xl sm:mt-3xl space-y-xl md:space-y-2xl">
         {journeyData.map((node, index) => (
           <JourneyNode key={index} {...node} />
         ))}

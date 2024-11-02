@@ -33,7 +33,7 @@ body {
     @apply text-[clamp(2.58rem,3.55vi+1.16rem,4rem)];
   }
   .heading-3 {
-    @apply text-[clamp(2.18rem,2.05vi+1.36rem,3rem)];
+    @apply text-[clamp(2.15rem,2.125vi+1.3rem,3rem)];
   }
   .heading-4 {
     @apply text-[clamp(1.85rem,2.05vi+1.03rem,2.67rem)];
@@ -72,7 +72,7 @@ body {
   }
   .section-heading {
     @apply text-neutral-100 text-gradient font-bold leading-[1.15]
-    [word-spacing:-0.05em] heading-1;
+    [word-spacing:-0.05em] text-[clamp(3rem,5vi+1.5rem,3.5rem)] sm:heading-1;
   }
 }
 
