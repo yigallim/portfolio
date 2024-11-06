@@ -38,7 +38,7 @@ const Contact = () => {
           </span>
           <span>TOGETHER</span>
         </h2>
-        <a className="block" href="mailto:yang@gmail.com">
+        <a className="block" href="mailto:yigallim@gmail.com">
           <FlipButton />
         </a>
       </div>

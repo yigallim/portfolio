@@ -30,7 +30,7 @@ export default function Page() {
         <Navigation />
         <Intro />
         <div className="bg-white bg-grid-black/[0.09]">
-          <div className="bg-black min-h-[100rem] rounded-2xl lg:rounded-3xl z-30 relative pb-sm lg:pb-md">
+          <div className="bg-black min-h-[100rem] rounded-2xl lg:rounded-3xl z-30 relative pb-md">
             <Services />
             <Projects />
             <Journey />
