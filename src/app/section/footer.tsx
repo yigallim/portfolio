@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import moment from "moment-timezone";
 import {
-  github,
-  linkedin,
-  facebook,
-  instagram,
-  note,
-  figma,
-  aceternity,
-  huynguyen,
+  GITHUB,
+  LINKEDIN,
+  FACEBOOK,
+  INSTAGRAM,
+  NOTE,
+  FIGMA,
+  ACETERNITY,
+  HUY_NGUYEN,
 } from "@/lib/config/constant";
 import { ArrowUp, CornerDownLeft } from "lucide-react";
 import useSmoothNavigate from "@/lib/global/use-smooth-navigate";
@@ -81,8 +81,8 @@ const navigationLinks: LinkEntry[] = [
   { label: "Journey", href: "#journey" },
   { label: "About", href: "#about" },
 ];
-const socialLinks: LinkEntry[] = [linkedin, instagram, facebook, github];
-const resourceLinks: LinkEntry[] = [note, figma, aceternity, huynguyen];
+const socialLinks: LinkEntry[] = [LINKEDIN, INSTAGRAM, FACEBOOK, GITHUB];
+const resourceLinks: LinkEntry[] = [NOTE, FIGMA, ACETERNITY, HUY_NGUYEN];
 
 const Footer = () => {
   const [time, setTime] = useState("");

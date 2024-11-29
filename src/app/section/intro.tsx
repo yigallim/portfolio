@@ -9,6 +9,12 @@ import bulbsImg from "@/app/assets/img/background/bulbs.jpg";
 import palmImg from "@/app/assets/img/background/palm.jpg";
 import parisImg from "@/app/assets/img/background/paris.jpg";
 import streetsSelfImg from "@/app/assets/img/background/streets_self.jpg";
+import { INTRO_ANIMATION_DURATION_FACTOR } from "@/lib/config/constant";
+
+const DELAY_1 = 2.4 * INTRO_ANIMATION_DURATION_FACTOR;
+const DELAY_2 = 2.54 * INTRO_ANIMATION_DURATION_FACTOR;
+const DELAY_3 = 2.86 * INTRO_ANIMATION_DURATION_FACTOR;
+const DELAY_4 = 2.48 * INTRO_ANIMATION_DURATION_FACTOR;
 
 const Intro = () => {
   const { loaded } = useLoaded();
@@ -29,7 +35,7 @@ const Intro = () => {
       y: 0,
       transition: {
         ease: easeExpo,
-        delay: i * 0.34 + 2.48,
+        delay: i * 0.34 + DELAY_4,
         duration: 2.8,
       },
     }),
@@ -45,7 +51,7 @@ const Intro = () => {
         className="section-inner h-0 relative top-lg z-10"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ delay: 3, duration: 2.8, ease: easeExpo }}
+        transition={{ delay: DELAY_3, duration: 2.8, ease: easeExpo }}
       >
         <div className="flex max-lg:flex-col max-lg:space-y-2xs lg:items-center lg:space-x-xl mr-3xl">
           <div className="text-neutral-700 base-large font-bold">
@@ -109,7 +115,7 @@ const Intro = () => {
             <div className="mt-sm sm:mt-xl md:mt-lg flex max-sm:flex-col gap-x-md justify-between sm:items-end relative">
               <p className="heading-3 flex flex-col">
                 <TextAnimation
-                  delay={2.4}
+                  delay={DELAY_1}
                   el="span"
                   className="font-bold tracking-tighter leading-tight text-neutral-800"
                 >
@@ -125,7 +131,7 @@ const Intro = () => {
               />
               <div className="flex sm:flex-col-reverse items-end gap-y-3xs sm:gap-y-xs">
                 <TextAnimation
-                  delay={2.52}
+                  delay={DELAY_2}
                   el="p"
                   className="heading-1 font-bold tracking-normal leading-none text-neutral-800"
                 >
@@ -150,7 +156,7 @@ const Intro = () => {
             <div className="flex flex-col relative">
               <p className="text-[6.75rem] flex flex-col">
                 <TextAnimation
-                  delay={2.4}
+                  delay={DELAY_1}
                   el="span"
                   className="font-bold tracking-tighter leading-tight text-neutral-800"
                 >
@@ -166,7 +172,7 @@ const Intro = () => {
               />
               <div className="flex space-x-3xs justify-between items-end">
                 <TextAnimation
-                  delay={2.52}
+                  delay={DELAY_2}
                   el="p"
                   className="text-[10.25rem] font-bold tracking-normal leading-none text-neutral-800"
                 >

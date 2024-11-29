@@ -3,9 +3,11 @@ import React, { useEffect } from "react";
 import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import { GoogleGeminiEffect } from "@/components/ui/google-gemini-effect";
 import TextAnimation from "@/components/ui/text-animation";
+import { INTRO_ANIMATION_DURATION_FACTOR } from "@/lib/config/constant";
 
-const swipeUpDelay = 2;
-const swipeUpDuration = 0.84;
+const SWIPE_UP_DELAY = 2 * INTRO_ANIMATION_DURATION_FACTOR;
+const SWIPE_UP_DURATION = 0.84 * INTRO_ANIMATION_DURATION_FACTOR;
+const SVG_LINE_DURATION = 1.6 * INTRO_ANIMATION_DURATION_FACTOR;
 
 const Welcome = () => {
   const ref = React.useRef(null);
@@ -14,7 +16,7 @@ const Welcome = () => {
   useEffect(() => {
     const controls = animate(animatedValue, 1, {
       delay: 0.1,
-      duration: 1.6,
+      duration: SVG_LINE_DURATION,
       ease: [0.2, 0, 0.8, 1],
     });
     return controls.stop;
@@ -49,8 +51,8 @@ const Welcome = () => {
               d: `M0,0 L1,0 L1,1 Q0.5,${curveValue},0,1`,
             }}
             transition={{
-              delay: swipeUpDelay,
-              duration: swipeUpDuration,
+              delay: SWIPE_UP_DELAY,
+              duration: SWIPE_UP_DURATION,
               ease: "easeInOut",
             }}
           />
@@ -61,7 +63,7 @@ const Welcome = () => {
         ref={ref}
         initial={{ y: "0%" }}
         animate={{ y: "-100%" }}
-        transition={{ delay: swipeUpDelay, duration: swipeUpDuration, ease: "easeInOut" }}
+        transition={{ delay: SWIPE_UP_DELAY, duration: SWIPE_UP_DURATION, ease: "easeInOut" }}
         style={{ clipPath: "url(#animated-clip)" }}
       >
         <GoogleGeminiEffect
