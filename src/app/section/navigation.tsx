@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, Variants, motion } from "framer-motion";
-import { github, linkedin, note } from "@/lib/config/constant";
+import { GITHUB, LINKEDIN, NOTE } from "@/lib/config/constant";
 import { easeExpo } from "@/lib/global/ease-expo";
 import useSmoothNavigate from "@/lib/global/use-smooth-navigate";
 
@@ -49,7 +49,7 @@ const LinkAnchor = ({ href, label, gradient, onClick }: LinkAnchorProps) => {
   );
 };
 
-const links = [linkedin, github, note];
+const links = [LINKEDIN, GITHUB, NOTE];
 
 const sidebar: Variants = {
   open: {
