@@ -43,7 +43,6 @@ const softwareSlugs = [
   "mongodb",
   "spring",
   "git",
-  "github",
   "visualstudiocode",
   "postman",
   "figma",
@@ -60,7 +59,6 @@ const dataScienceSlugs = [
   "pytorch",
   "keras",
   "opencv",
-  "r",
 ];
 
 const splitSlugs = (slugs: string[]) => {

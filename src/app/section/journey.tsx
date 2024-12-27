@@ -96,15 +96,15 @@ const journeyData: JourneyNodeProps[] = [
     description:
       "Learned basic programming concepts through languages such as Java, C, and Assembly. Also took mathematics courses, including Algebra, Calculus, Statistics, and Discrete Math.",
   },
-  {
-    organization: "SMK Sinar Bintang",
-    role: "SPM Science Stream",
-    duration: "Jan 2017 - Mac 2022",
-    type: "Education",
-    tags: ["SPM : 5A"],
-    description:
-      "Completed Science Stream curriculum, gaining foundational knowledge in Physics, Chemistry, Biology, and Additional Mathematics.",
-  },
+  // {
+  //   organization: "SMK Sinar Bintang",
+  //   role: "SPM Science Stream",
+  //   duration: "Jan 2017 - Mac 2022",
+  //   type: "Education",
+  //   tags: ["SPM : 5A"],
+  //   description:
+  //     "Completed Science Stream curriculum, gaining foundational knowledge in Physics, Chemistry, Biology, and Additional Mathematics.",
+  // },
 ];
 
 const Journey = () => {
