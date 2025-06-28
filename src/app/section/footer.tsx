@@ -12,6 +12,7 @@ import {
 } from "@/lib/config/constant";
 import { ArrowUp, CornerDownLeft } from "lucide-react";
 import useSmoothNavigate from "@/lib/global/use-smooth-navigate";
+import { getYear } from "@/lib/utils";
 
 type FlipLinkProps = {
   label: string;
@@ -122,7 +123,8 @@ const Footer = () => {
       </div>
       <div className="flex max-md:flex-wrap max-md:justify-between gap-y-sm gap-x-lg">
         <div className="md:flex-1 font-bold text-neutral-700 heading-2 leading-[0.875] space-y-2xs tracking-[-0.025em]">
-          <span className="font-semibold mr-3xs">&copy;</span>2024
+          <span className="font-semibold mr-3xs">&copy;</span>
+          {getYear()}
           <span className="block w-fit text-gradient from-[#DC79FF] to-[#256BFA]">YUET YANG</span>
         </div>
         <div className="md:flex-1 flex items-end">

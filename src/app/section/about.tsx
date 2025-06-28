@@ -2,6 +2,7 @@ import React from "react";
 import TextAnimation from "@/components/ui/text-animation";
 import tarumtImg from "@/app/assets/img/background/tarumt.webp";
 import Image from "next/image";
+import { getYear } from "@/lib/utils";
 
 const About = () => {
   return (
@@ -24,7 +25,7 @@ const About = () => {
           <p className="base-large lg:sub-heading font-medium">
             My main competence lies in full stack development. I have been coding since 2022, I have
             <span className="font-semibold bg-gradient-to-r from-[#8980ED] via-[#EC787F] to-[#FFC170] text-transparent bg-clip-text">
-              &nbsp;2 years of experience&nbsp;
+              &nbsp;{getYear() - 2022} years of experience&nbsp;
             </span>
             in web development. Additionally, I am a data scientist skilled in machine learning and
             data analysis, with a strong problem-solving skills.

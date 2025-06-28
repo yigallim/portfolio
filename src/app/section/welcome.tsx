@@ -4,6 +4,7 @@ import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import { GoogleGeminiEffect } from "@/components/ui/google-gemini-effect";
 import TextAnimation from "@/components/ui/text-animation";
 import { INTRO_ANIMATION_DURATION_FACTOR } from "@/lib/config/constant";
+import { getYear } from "@/lib/utils";
 
 const SWIPE_UP_DELAY = 2 * INTRO_ANIMATION_DURATION_FACTOR;
 const SWIPE_UP_DURATION = 0.84 * INTRO_ANIMATION_DURATION_FACTOR;
@@ -29,7 +30,7 @@ const Welcome = () => {
   const pathLengthFifth = useTransform(animatedValue, [0, 1], [0, 1.2]);
 
   const title = <TextAnimation delay={0.4}>Welcome</TextAnimation>;
-  const description = <TextAnimation delay={0.4}>&copy; Folio 2024</TextAnimation>;
+  const description = <TextAnimation delay={0.4}>{"© Folio " + getYear()}</TextAnimation>;
 
   const width = window.innerWidth;
   let curveValue;
